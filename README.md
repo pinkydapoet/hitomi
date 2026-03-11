@@ -127,10 +127,6 @@ http://localhost:3000
 | PUT | /api/user/profile | Update profile |
 | PUT | /api/user/password | Change password |
 
-## Default Test Accounts
-- **Admin**: admin@hitomi.com / admin123
-- **User**: user@hitomi.com / user123
-
 ## Coupon Codes
 - `HITOMI10` — 10% off
 - `WELCOME20` — 20% off (new users)
