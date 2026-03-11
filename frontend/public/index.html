@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hitomi – Premium Sneakers</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="page" id="page-register">
+  <div class="auth-wrap">
+    <div class="glass-card auth-card">
+      <div class="auth-logo">LOGO_SVG</div>
+      <div class="auth-title">Let's Get Started</div>
+      <div class="auth-sub">Create a new account</div>
+      <div class="inp-wrap">
+        <svg class="inp-icon" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <input class="inp" id="reg-name" type="text" placeholder="Full Name">
+      </div>
+      <div class="inp-wrap">
+        <svg class="inp-icon" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg>
+        <input class="inp" id="reg-email" type="email" placeholder="Your Email">
+      </div>
+      <div class="inp-wrap">
+        <svg class="inp-icon" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+        <input class="inp" id="reg-pass" type="password" placeholder="Password">
+      </div>
+      <div class="inp-wrap">
+        <svg class="inp-icon" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+        <input class="inp" id="reg-pass2" type="password" placeholder="Password Again">
+      </div>
+      <button class="btn-cyan" id="reg-btn" onclick="doRegister()">Sign Up</button>
+      <div class="auth-footer">Have an account? <a onclick="showPage('page-login')">Sign In</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="page active" id="page-login">
+  <div class="auth-wrap">
+    <div class="glass-card auth-card">
+      <div class="auth-logo">LOGO_SVG</div>
+      <div class="auth-title">Welcome to Hitomi</div>
+      <div class="auth-sub">Sign in to continue</div>
+      <div class="inp-wrap">
+        <svg class="inp-icon" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg>
+        <input class="inp" id="login-email" type="email" placeholder="Your Email">
+      </div>
+      <div class="inp-wrap">
+        <svg class="inp-icon" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+        <input class="inp" id="login-pass" type="password" placeholder="Password">
+      </div>
+      <button class="btn-cyan" id="login-btn" onclick="doLogin()">Sign In</button>
+      <div class="or-divider"><span></span><p>OR</p><span></span></div>
+      <button class="btn-outline mb-10" onclick="showToast('Google login coming soon!')">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#EA4335" d="M5.27 9.76A7.08 7.08 0 0112 4.9c1.69 0 3.21.6 4.41 1.57L19.9 3C17.82 1.14 15.07 0 12 0 7.31 0 3.26 2.7 1.28 6.67l3.99 3.09z"/><path fill="#34A853" d="M16.04 18.01A7.07 7.07 0 0112 19.1c-2.91 0-5.4-1.77-6.62-4.32l-3.98 3.05C3.3 21.34 7.33 24 12 24c2.93 0 5.73-1.04 7.83-2.99l-3.79-2.99z"/><path fill="#FBBC05" d="M19.1 12c0-.67-.07-1.31-.18-1.93H12v3.86h4.01a3.5 3.5 0 01-1.51 2.27l3.79 2.99C20.19 17.26 21.1 14.83 21.1 12H19.1z"/><path fill="#4285F4" d="M1.28 6.67A11.92 11.92 0 000 12c0 1.89.44 3.68 1.28 5.27l3.98-3.05A7.14 7.14 0 014.9 12c0-.77.12-1.51.37-2.24L1.28 6.67z"/></svg>
+        Login with Google
+      </button>
+      <button class="btn-outline" onclick="showToast('Facebook login coming soon!')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97H15.8c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+        Login with Facebook
+      </button>
+      <a class="forgot-link" onclick="showToast('Password reset email sent!')">Forgot Password?</a>
+      <div class="auth-footer">Don't have an account? <a onclick="showPage('page-register')">Register</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-home">
+  <nav class="navbar">
+    <div class="nav-logo" onclick="showPage('page-home')">LOGO_SVG</div>
+    <div class="nav-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" placeholder="Search sneakers..." id="search-inp" oninput="homeSearchDebounce()">
+    </div>
+    <div class="nav-icons">
+      <button class="nav-icon-btn" onclick="showPage('page-wishlist')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <span class="badge" id="wishlist-badge">0</span>
+      </button>
+      <button class="nav-icon-btn" onclick="showPage('page-cart')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <span class="badge" id="cart-badge">0</span>
+      </button>
+      <div class="relative">
+        <button class="avatar-btn" id="home-avatar" onclick="toggleDropdown('home-dd')">😺</button>
+        <div class="dropdown" id="home-dd">
+          <a class="admin-link hidden" onclick="showPage('page-admin');closeAllDropdowns()">Admin Dashboard</a>
+          <a onclick="showPage('page-account');closeAllDropdowns()">Account detail</a>
+          <a onclick="showPage('page-orders');closeAllDropdowns()">My Orders</a>
+          <a onclick="showPage('page-cart');closeAllDropdowns()">Cart</a>
+          <a class="danger" onclick="doSignOut()">Sign out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="home-wrap">
+    <div class="home-main">
+      <div class="flash-banner">
+        <div class="flash-text">
+          <h2>Super Flash Sale<br>50% Off</h2>
+          <div class="flash-timer">
+            <div class="timer-box" id="t-h">08</div>
+            <div class="timer-box" id="t-m">34</div>
+            <div class="timer-box" id="t-s">52</div>
+          </div>
+        </div>
+        <img class="flash-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80" alt="">
+      </div>
+      <div class="section-header">
+        <span class="section-title">New Arrivals</span>
+        <button class="see-more" onclick="openProductsPage('all')">See More</button>
+      </div>
+      <div class="products-grid" id="home-grid"></div>
+    </div>
+    <div class="home-side">
+      <div class="section-header"><span class="section-title">Categories</span></div>
+      <div class="categories-row">
+        <div class="cat-card" onclick="openProductsPage('men')">
+          <img src="https://images.unsplash.com/photo-1556906781-9a412961a28c?w=400&q=80" alt="Men">
+          <div class="cat-label"><span>Men Shoes</span></div>
+        </div>
+        <div class="cat-card" onclick="openProductsPage('women')">
+          <img src="https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?w=400&q=80" alt="Women">
+          <div class="cat-label"><span>Women Shoes</span></div>
+        </div>
+      </div>
+      <div class="section-header">
+        <span class="section-title">On Sale 🔥</span>
+        <button class="see-more" onclick="openProductsPage('sale')">See More</button>
+      </div>
+      <div class="sale-row" id="sale-row"></div>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-products">
+  <nav class="navbar">
+    <button class="back-btn" onclick="showPage('page-home')">← Back</button>
+    <div class="nav-search no-max-width">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" placeholder="Search sneakers..." id="plist-search-inp" oninput="plistDebounce()">
+    </div>
+    <div class="nav-icons">
+      <button class="nav-icon-btn" onclick="showPage('page-wishlist')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <span class="badge" id="plist-wishlist-badge">0</span>
+      </button>
+      <button class="nav-icon-btn" onclick="showPage('page-cart')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <span class="badge" id="plist-cart-badge">0</span>
+      </button>
+      <button class="avatar-btn" onclick="toggleDropdown('plist-dd')">😺</button>
+      <div class="dropdown dropdown-custom" id="plist-dd">
+        <a class="admin-link hidden" onclick="showPage('page-admin');closeAllDropdowns()">Admin Dashboard</a>
+        <a onclick="showPage('page-account');closeAllDropdowns()">Account detail</a>
+        <a onclick="showPage('page-orders');closeAllDropdowns()">My Orders</a>
+        <a onclick="showPage('page-cart');closeAllDropdowns()">Cart</a>
+        <a class="danger" onclick="doSignOut()">Sign out</a>
+      </div>
+    </div>
+  </nav>
+  <div class="products-page-wrap">
+    <div id="plist-page-title" class="plist-title">All Sneakers</div>
+    <div class="plist-filter-bar" id="plist-filter-bar">
+      <button class="filter-chip active" data-filter="all" onclick="plistChip(this,'all')">All</button>
+      <button class="filter-chip" data-filter="men" onclick="plistChip(this,'men')">Men</button>
+      <button class="filter-chip" data-filter="women" onclick="plistChip(this,'women')">Women</button>
+      <button class="filter-chip" data-filter="sale" onclick="plistChip(this,'sale')">On Sale 🔥</button>
+      <button class="filter-chip" data-filter="jordan" onclick="plistChip(this,'jordan')">Jordan</button>
+      <button class="filter-chip" data-filter="nike" onclick="plistChip(this,'nike')">Nike</button>
+      <button class="filter-chip" data-filter="adidas" onclick="plistChip(this,'adidas')">Adidas</button>
+    </div>
+    <div class="plist-sort-row">
+      <span class="plist-count" id="plist-count">0 products</span>
+      <select class="sort-select" id="plist-sort" onchange="fetchProducts()" title="Sort products">
+        <option value="default">Sort: Default</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+        <option value="rating">Top Rated</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </div>
+    <div class="plist-grid" id="plist-grid"></div>
+  </div>
+</div>
+
+<div class="page" id="page-cart">
+  <nav class="navbar">
+    <button class="back-btn" onclick="history.back ? goBack() : showPage('page-home')">← Back</button>
+    <div class="logo-title">
+      <div class="nav-logo" onclick="showPage('page-home')">LOGO_SVG</div>
+      <div class="cart-title">Your Cart</div>
+    </div>
+    <div class="nav-icons relative">
+      <button class="avatar-btn" onclick="toggleDropdown('cart-dd')">😺</button>
+      <div class="dropdown" id="cart-dd">
+        <a class="admin-link hidden" onclick="showPage('page-admin');closeAllDropdowns()">Admin Dashboard</a>
+        <a onclick="showPage('page-account');closeAllDropdowns()">Account detail</a>
+        <a onclick="showPage('page-orders');closeAllDropdowns()">My Orders</a>
+        <a class="danger" onclick="doSignOut()">Sign out</a>
+      </div>
+    </div>
+  </nav>
+  <div class="cart-wrap">
+    <div class="cart-items-col">
+      <div id="cart-items"></div>
+    </div>
+    <div class="cart-summary-col">
+      <div class="cart-summary">
+      <div class="coupon-row">
+        <input class="coupon-inp" id="coupon-inp" placeholder="Enter Coupon Code (try HITOMI10)">
+        <button class="apply-btn" onclick="applyCoupon()">Apply</button>
+      </div>
+      <div id="coupon-msg" class="coupon-msg"></div>
+      <div class="summary-row"><span>Items (<span id="cart-count">0</span>)</span><span id="items-total">$0.00</span></div>
+      <div class="summary-row"><span>Shipping</span><span>$40.00</span></div>
+      <div class="summary-row"><span>Import charges</span><span>$128.00</span></div>
+      <div class="summary-row discount-row" id="discount-row"><span>Discount</span><span id="discount-amt">-$0.00</span></div>
+      <div class="summary-row total"><span>Total Price</span><span id="grand-total">$168.00</span></div>
+      <button class="checkout-btn" onclick="doCheckout()">Check Out</button>
+    </div>
+    </div> <!-- end cart-summary-col -->
+  </div> <!-- end cart-wrap -->
+  </div>
+</div>
+
+<div class="page" id="page-wishlist">
+  <nav class="navbar">
+    <button class="back-btn" onclick="showPage('page-home')">← Back</button>
+    <span class="navbar-title">Wishlist ❤️</span>
+    <div class="spacer-60"></div>
+  </nav>
+  <div class="home-wrap">
+    <div class="plist-grid" id="wishlist-grid"></div>
+  </div>
+</div>
+
+<div class="page" id="page-orders">
+  <nav class="navbar">
+    <button class="back-btn" onclick="showPage('page-home')">← Back</button>
+    <span class="navbar-title">My Orders 📦</span>
+    <div class="spacer-60"></div>
+  </nav>
+  <div class="account-wrap" id="orders-wrap"></div>
+</div>
+
+<div class="page" id="page-account">
+  <nav class="navbar">
+    <button class="back-btn" onclick="showPage('page-home')">← Back</button>
+    <span class="navbar-title">Account Detail</span>
+    <div class="spacer-80"></div>
+  </nav>
+  <div class="account-wrap">
+    <div class="account-hero">
+      <div class="account-avatar-wrap">
+        <div class="account-avatar">😺</div>
+        <button class="avatar-edit-btn" onclick="showToast('Photo upload coming soon!')">✏️</button>
+      </div>
+      <div class="account-hero-info">
+        <h2 id="acc-display-name">Hitomi User</h2>
+        <p id="acc-display-email">user@hitomi.com</p>
+        <span class="member-badge">⭐ Premium Member</span>
+      </div>
+    </div>
+    <div class="account-stats">
+      <div class="stat-card"><div class="stat-num" id="stat-orders">0</div><div class="stat-label">Orders</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-wishlist">0</div><div class="stat-label">Wishlist</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-saved">$0</div><div class="stat-label">Saved</div></div>
+    </div>
+    <div class="account-section">
+      <h3>👤 Personal Information</h3>
+      <div class="fields-row">
+        <div class="account-field"><label>First Name</label><input class="account-inp" id="acc-fname" type="text" placeholder="First name"></div>
+        <div class="account-field"><label>Last Name</label><input class="account-inp" id="acc-lname" type="text" placeholder="Last name"></div>
+      </div>
+      <div class="account-field"><label>Email Address</label><input class="account-inp" id="acc-email" type="email" placeholder="Email"></div>
+      <div class="account-field"><label>Phone Number</label><input class="account-inp" id="acc-phone" type="tel" placeholder="Phone"></div>
+      <div class="account-field"><label for="acc-dob">Date of Birth</label><input class="account-inp" id="acc-dob" type="date" title="Date of birth"></div>
+      <button class="save-btn" onclick="saveProfile()">Save Changes</button>
+    </div>
+    <div class="account-section">
+      <h3>📦 Shipping Address</h3>
+      <div class="account-field"><label>Street Address</label><input class="account-inp" id="acc-street" type="text" placeholder="Street address"></div>
+      <div class="fields-row">
+        <div class="account-field"><label>City</label><input class="account-inp" id="acc-city" type="text" placeholder="City"></div>
+        <div class="account-field"><label>ZIP Code</label><input class="account-inp" id="acc-zip" type="text" placeholder="ZIP"></div>
+      </div>
+      <div class="account-field"><label>Country</label><input class="account-inp" id="acc-country" type="text" placeholder="Country"></div>
+      <button class="save-btn" onclick="saveAddress()">Save Address</button>
+    </div>
+    <div class="account-section">
+      <h3>🔐 Change Password</h3>
+      <div class="account-field"><label>Current Password</label><input class="account-inp" id="acc-cur-pass" type="password" placeholder="Current password"></div>
+      <div class="account-field"><label>New Password</label><input class="account-inp" id="acc-new-pass" type="password" placeholder="New password"></div>
+      <div class="account-field"><label>Confirm New Password</label><input class="account-inp" id="acc-conf-pass" type="password" placeholder="Confirm new password"></div>
+      <button class="save-btn" onclick="changePassword()">Update Password</button>
+    </div>
+    <div class="account-section account-warning-section">
+      <h3 class="warning-header">⚠️ Account Actions</h3>
+      <button onclick="doSignOut()" class="danger-btn">Sign Out</button>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-admin">
+  <nav class="navbar">
+    <button class="back-btn" onclick="showPage('page-home')">← Back</button>
+    <span class="navbar-title">Admin Dashboard ⚙️</span>
+    <div class="spacer-60"></div>
+  </nav>
+  <div class="account-wrap max-w-900">
+    <div class="account-section">
+      <div class="product-mgmt-header">
+        <h3 class="m-0">Product Management</h3>
+        <button class="btn-cyan btn-add-product" onclick="openAdminProductModal()">+ Add Product</button>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="admin-products-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    <div class="modal-inner">
+      <div class="modal-img-wrap">
+        <img id="modal-img" src="" alt="">
+      </div>
+      <div class="modal-info">
+        <h2 id="modal-name"></h2>
+        <div class="modal-price" id="modal-price"></div>
+        <div class="modal-desc" id="modal-desc"></div>
+        <div class="size-label">Select Size</div>
+        <div class="sizes">
+          <button class="size-btn" onclick="selectSize(this)">US 6</button>
+          <button class="size-btn" onclick="selectSize(this)">US 7</button>
+          <button class="size-btn active" onclick="selectSize(this)">US 8</button>
+          <button class="size-btn" onclick="selectSize(this)">US 9</button>
+          <button class="size-btn" onclick="selectSize(this)">US 10</button>
+          <button class="size-btn" onclick="selectSize(this)">US 11</button>
+        </div>
+        <button class="modal-add-btn" onclick="addToCartFromModal()">Add to Cart 🛒</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="admin-modal-overlay" onclick="closeAdminModal(event)">
+  <div class="modal small">
+    <button class="modal-close" onclick="closeAdminModalDirect()">✕</button>
+    <h2 id="admin-modal-title" class="admin-modal-title">Add Product</h2>
+    <input type="hidden" id="admin-prod-id">
+
+    <div class="fields-row">
+      <div class="account-field"><label for="admin-prod-name" class="text-white">Name *</label><input class="account-inp" id="admin-prod-name" type="text" placeholder="Product Name"></div>
+      <div class="account-field"><label for="admin-prod-brand" class="text-white">Brand</label><input class="account-inp" id="admin-prod-brand" type="text" placeholder="Brand"></div>
+    </div>
+    <div class="fields-row">
+      <div class="account-field"><label for="admin-prod-price" class="text-white">Price *</label><input class="account-inp" id="admin-prod-price" type="number" step="0.01" placeholder="0.00"></div>
+      <div class="account-field"><label for="admin-prod-orig" class="text-white">Original Price (For Sale)</label><input class="account-inp" id="admin-prod-orig" type="number" step="0.01" placeholder="0.00"></div>
+    </div>
+    <div class="fields-row">
+      <div class="account-field">
+        <label for="admin-prod-cat" class="text-white">Category *</label>
+        <select class="account-inp" id="admin-prod-cat" title="Product category">
+          <option value="1">Men's Shoes</option>
+          <option value="2">Women's Shoes</option>
+          <option value="3">Sale</option>
+        </select>
+      </div>
+      <div class="account-field"><label for="admin-prod-stock" class="text-white">Stock</label><input class="account-inp" id="admin-prod-stock" type="number" value="100" placeholder="100"></div>
+    </div>
+    <div class="account-field">
+      <label for="admin-prod-img" class="text-white">Image URL *</label>
+      <input class="account-inp" id="admin-prod-img" type="text" placeholder="https://...">
+    </div>
+    <div class="account-field">
+      <label for="admin-prod-desc" class="text-white">Description</label>
+      <textarea class="account-inp resize-vertical" id="admin-prod-desc" rows="3" placeholder="Product description"></textarea>
+    </div>
+    <button class="modal-add-btn mt-10" onclick="saveAdminProduct()">Save Product</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<div id="loader" class="loader-overlay hidden"><div class="loader-spinner"></div></div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
